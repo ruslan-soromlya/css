@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Page container</h2>
+    <div class="container">
+
+    </div>
+
+    <div class="buttons">
+        <button id="btnLoadPage1">Load page1</button>
+        <button id="btnLoadPage2">Load page2</button>
+    </div>
+
+    <style>
+        .container {
+            width: 600px;
+            height: 600px;
+            background-color: lightblue;
+            margin: 0 auto;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 0 auto;
+        }
+    </style>
+
+    <script>
+        btnLoadPage1 = document.getElementById('btnLoadPage1');
+        btnLoadPage2 = document.getElementById('btnLoadPage2');
+
+
+        btnLoadPage1.onclick = loadPage1;
+    
+
+        function loadPage1() {
+            loadData('page1.html');
+        }
+
+
+        function loadData(url) {
+            let container = document.getElementsByClassName('container')[0];
+            fetch(url)
+            .then(r => r.text().then(x => container.innerHTML = x));
+            
+        }
+
+    </script>
+</body>
+</html>
