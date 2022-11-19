@@ -44,4 +44,52 @@
         visibility: hidden;
         transform: translateY(-4rem);
     }
+
+    &__radio {
+
+        &-input {
+            display: none;
+        }
+        &-group {
+            width: calc(50% - 1px);
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+
+        &-label {
+            font-size: $default-font-size;
+            cursor: pointer;
+            position: relative;
+            padding-left: 4rem;
+        }
+
+        &-button {
+            display: inline-block;
+            height: 3rem;
+            width: 3rem;
+            border: 5px solid $color-primary;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: -.5rem;
+            &::after {
+                height: 1.3rem;
+                width: 1.3rem;
+                content: '';
+                border-radius: 50%;
+                background-color: $color-primary;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                transition: opacity .2s;
+            }
+        }
+
+        &-input:checked ~ &-label &-button::after {
+            opacity: 1;
+        }
+    }
 }
