@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="centered"></div>
+    <div class="centered2"></div>
+</body>
+
+<style>
+    .centered {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 714.8px;
+        height: 623.99px;
+        background-repeat: repeat repeat;
+        background-image: 
+            linear-gradient(to right bottom,grey calc(50% - 1px), black 50%);
+        background-size: 16.7% 16.7%;
+        background-color: grey;
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+
+    .centered2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        width: 714.8px;
+        height: 623.99px;
+        background-clip: content-box;
+        background-image: linear-gradient(140deg, transparent 0%, black 100%),
+        linear-gradient(to right bottom, transparent calc(50% - 1px), black 50%)
+    }
+</style>
+</html>
