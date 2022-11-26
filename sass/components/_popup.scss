@@ -14,8 +14,8 @@
         opacity: 1;
         visibility: visible;
     }
-
-    &:target &__content {
+    @media screen {
+        &:target &__content {
         transform: scale(1) translate(-50%, -50%);
     }
 
@@ -29,7 +29,10 @@
         overflow: hidden;
         transform: translate(-50%, -50%) scale(.5) ;
         transition: all .4s .2s;
+    }    
     }
+
+    
 
     &__left {
         width: 33.333333%;
