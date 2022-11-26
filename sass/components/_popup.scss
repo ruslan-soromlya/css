@@ -14,30 +14,37 @@
         opacity: 1;
         visibility: visible;
     }
+
     @media screen {
         &:target &__content {
-        transform: scale(1) translate(-50%, -50%);
+            transform: scale(1) translate(-50%, -50%);
+        }
+
+        &__content {
+            @include centered;
+            width: 75%;
+            background-color: $color-white;
+            box-shadow: 0 2rem 4rem rgba($color-black, .2);
+            border-radius: 3px;
+            display: table;
+            overflow: hidden;
+            transform: translate(-50%, -50%) scale(.5);
+            transition: all .4s .2s;
+        }
     }
 
-    &__content {
-        @include centered;
-        width: 75%;
-        background-color: $color-white;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
-        border-radius: 3px;
-        display: table;
-        overflow: hidden;
-        transform: translate(-50%, -50%) scale(.5) ;
-        transition: all .4s .2s;
-    }    
-    }
 
-    
 
     &__left {
         width: 33.333333%;
         display: table-cell;
         vertical-align: middle;
+        @include clearfix;
+
+        @include respond(tab-port) {
+            width: 100%;
+            display: inline-flex;
+        }
     }
 
     &__right {
@@ -45,11 +52,23 @@
         display: table-cell;
         vertical-align: middle;
         padding: 3rem 5rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            display: block;
+        }
     }
 
     &__img {
         display: block;
         width: 100%;
+        object-fit: cover;
+
+        @include respond(tab-port) {
+            width: 50%;
+            display: block;
+            float: left;
+        }
     }
 
     &__text {
@@ -67,9 +86,20 @@
         -moz-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;
+
+        @include respond(tab-port) {
+            -moz-column-count: 1;
+            -moz-column-gap: 4rem;
+            -moz-column-rule: 1px solid $color-grey-light-2;
+
+            column-count: 1;
+            column-gap: 4rem;
+            column-rule: 1px solid $color-grey-light-2;
+        }
     }
 
     &__close {
+
         &:link,
         &:visited {
             color: $color-grey-dark;
@@ -88,4 +118,3 @@
         }
     }
 }
-

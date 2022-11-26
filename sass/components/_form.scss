@@ -55,6 +55,11 @@
             display: inline-block;
             margin: 0;
             padding: 0;
+
+            @include respond(phone) {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
         }
 
         &-label {
