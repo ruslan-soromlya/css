@@ -1,5 +1,5 @@
 .popup {
-    background-color: rgba($color-black, .8);
+    background-color: rgba($color-black, .3);
     z-index: 2500;
     width: 100vw;
     height: 100vh;
@@ -9,6 +9,7 @@
     opacity: 0;
     visibility: hidden;
     translate: all .2s;
+    backdrop-filter: blur(10px);
 
     &:target {
         opacity: 1;
